@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="lead">{{ post.content }}</p>
+<p class="text-muted">Published: {{ post.created }}</p>
+<a href="/blog/{{ post.id }}/">Back</a>
+<br><br>
+
+<a href="/blog/edit/{{ post.id }}/" class="btn btn-warning">Edit</a>
+<a href="/blog/delete/{{ post.id }}/" class="btn btn-danger"
+   onclick="return confirm('Are you sure?')">Delete</a>
+
+<a href="/blog/" class="btn btn-secondary mt-3">← Back to Blog</a>
+{% endblock %}
